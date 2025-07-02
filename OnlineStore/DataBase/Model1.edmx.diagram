@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9bd4d1aef2d74f728b6d79a9bce19052" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineStoreModel.Category" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineStoreModel.Order" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineStoreModel.OrderItem" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineStoreModel.Product" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineStoreModel.Review" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineStoreModel.User" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="OnlineStoreModel.FK__Product__Categor__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineStoreModel.FK__Order__UserID__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineStoreModel.FK__OrderItem__Order__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineStoreModel.FK__OrderItem__Produ__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineStoreModel.FK__Review__ProductI__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineStoreModel.FK__Review__UserID__36B12243" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

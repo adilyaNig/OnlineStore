@@ -1,0 +1,44 @@
+﻿<Page x:Class="OnlineStore.Pages.CreateOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OnlineStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateOrderPage">
+
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Клиент:"/>
+            <ComboBox x:Name="cbUsers" DisplayMemberPath="Email"/>
+
+            <TextBlock Text="Дата заказа:" Margin="0,10,0,0"/>
+            <DatePicker x:Name="dpOrderDate"/>
+
+            <TextBlock Text="Статус:" Margin="0,10,0,0"/>
+            <ComboBox x:Name="cbStatus" SelectedIndex="0">
+                <ComboBoxItem Content="Delivered"/>
+                <ComboBoxItem Content="Shipped"/>
+                <ComboBoxItem Content="Paid"/>
+                <ComboBoxItem Content="Pending"/>
+                <ComboBoxItem Content="Cancelled"/>
+            </ComboBox>
+
+            <TextBlock Text="Сумма:" Margin="0,10,0,0"/>
+            <TextBox x:Name="tbAmount"/>
+
+            <TextBlock Text="Способ оплаты:" Margin="0,10,0,0"/>
+            <ComboBox x:Name="cbPayment" SelectedIndex="0">
+                <ComboBoxItem Content="Card"/>
+                <ComboBoxItem Content="PayPal"/>
+                <ComboBoxItem Content="CashOnDelivery"/>
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Content="Создать" Width="100" Margin="5" Click="btnSave_Click"/>
+                <Button Content="Отмена" Width="100" Margin="5" Click="btnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

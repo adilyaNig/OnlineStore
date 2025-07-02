@@ -1,0 +1,21 @@
+﻿<Page x:Class="OnlineStore.Pages.AddToCartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OnlineStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddToCartPage">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+            <TextBlock Text="{Binding Product.Name}" FontSize="16" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Product.Price, StringFormat=C}"/>
+            <TextBlock Text="Quantity:" Margin="0,10,0,5"/>
+            <TextBox x:Name="tbQuantity" Text="1"/>
+            <Button Content="Добавить в корзину" Click="btnAdd_Click" Margin="0,10,0,0"/>
+            <Button Content="Назад" Click="btnBack_Click" Margin="0,5,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

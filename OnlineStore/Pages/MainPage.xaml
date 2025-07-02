@@ -1,0 +1,66 @@
+﻿<Page x:Class="OnlineStore.Pages.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OnlineStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Online Store" FontSize="24" FontWeight="Bold" 
+                   Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Text="{Binding CurrentUser.FirstName}" Grid.Column="2" 
+                   HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+
+        <!-- Search -->
+        <TextBox x:Name="tbSearch" Grid.Row="1" Grid.Column="1" 
+                 Margin="10" Padding="5" TextChanged="tbSearch_TextChanged"/>
+
+        <!-- Category filter -->
+        <ComboBox x:Name="cbCategories" Grid.Row="1" Grid.Column="0" Margin="10"
+                  DisplayMemberPath="Name" SelectionChanged="cbCategories_SelectionChanged"/>
+
+        <!-- Products list -->
+        <ListView x:Name="lvProducts" Grid.Row="2" Grid.ColumnSpan="3" Margin="10"
+                  SelectionChanged="lvProducts_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Image" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageURL}" Width="80" Height="80" Stretch="Uniform"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price, StringFormat=C}" Width="100"/>
+                    <GridViewColumn Header="In Stock" DisplayMemberBinding="{Binding StockQuantity}" Width="80"/>
+                    <GridViewColumn Header="Rating" DisplayMemberBinding="{Binding AverageRating}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            <Button x:Name="btnAddProduct" Content="Добавить товар" Width="120" Margin="5" Click="btnAddProduct_Click"/>
+            <Button x:Name="btnViewOrders" Content="Просмотр заказов" Width="120" Margin="5" Click="btnViewOrders_Click"/>
+            <Button x:Name="btnLogout" Content="Выйти" Width="120" Margin="5" Click="btnLogout_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

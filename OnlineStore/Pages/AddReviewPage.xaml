@@ -1,0 +1,28 @@
+﻿<Page x:Class="OnlineStore.Pages.AddReviewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OnlineStore.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddReviewPage">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="300">
+            <TextBlock Text="{Binding Product.Name}" FontWeight="Bold"/>
+            <TextBlock Text="Оценка (1-5):" Margin="0,10,0,5"/>
+            <ComboBox x:Name="cbRating">
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5" IsSelected="True"/>
+            </ComboBox>
+            <TextBlock Text="Ваш отзыв:" Margin="0,10,0,5"/>
+            <TextBox x:Name="tbReview" Height="100" TextWrapping="Wrap"/>
+            <Button Content="Отправить" Click="btnSubmit_Click" Margin="0,10,0,5"/>
+            <Button Content="Назад" Click="btnBack_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
